@@ -1,0 +1,27 @@
+.background {
+    height: 800px;
+    background: url("https://cnt-05.content-na.drive.amazonaws.com/cdproxy/templink/pwSKKTmN4StatOsyVLp_YOO85EFiq2DmAQ2Yy_UctRceJxFPc?viewBox=2368%2C1578&ownerId=A143IVC7X06S6H");
+    background-size: cover;
+    background-position: 'center center';
+    background-repeat: 'no-repeat';
+}
+.searchBox {
+    background-color: slategray;
+    text-align: center;
+    position: absolute;
+    margin: auto;
+    top: 25%;
+    left: 30%;
+    width: 35%;
+    height: 25%;
+    box-shadow: 10px 10px 20px black;
+}
+
+.photoCredit{
+    text-align: center;
+    position: absolute;
+    bottom: 15%;
+    left: 40%;
+    font-size: 20px;
+    font-weight: bold;
+}
