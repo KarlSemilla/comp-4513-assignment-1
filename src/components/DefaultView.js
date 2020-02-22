@@ -2,6 +2,7 @@ import React from "react";
 import Favourites from "./Favourites";
 import HeaderApp from "./HeaderApp";
 import {Link} from 'react-router-dom';
+import MovieList from "./MovieList";
 
 
 class DefaultView extends React.Component {
@@ -14,6 +15,7 @@ class DefaultView extends React.Component {
             <div>
                 <HeaderApp/>
                 <Favourites/>
+                <MovieList movies={this.props.movies}/>
             </div>
         );
     }

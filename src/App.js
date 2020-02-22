@@ -33,7 +33,7 @@ class App extends React.Component{
       const url = "http://www.randyconnolly.com/funwebdev/3rd/api/movie/movies-brief.php?id=ALL";
       const response = await fetch(url);
       const jsonData = await response.json();
-      this.setState({photos: jsonData});
+      this.setState({movies: jsonData});
     }
     catch(error){
       console.error(error)
