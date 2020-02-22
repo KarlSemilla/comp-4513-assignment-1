@@ -4,7 +4,6 @@ import './App.css';
 import Home from './components/Home.js';
 import DefaultView from './components/DefaultView.js';
 import About from './components/About.js';
-import { render } from '@testing-library/react';
 import {Route} from 'react-router-dom';
 
 class App extends React.Component{
