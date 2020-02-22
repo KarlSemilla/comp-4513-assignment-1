@@ -16,7 +16,10 @@ class DefaultView extends React.Component {
                 <HeaderApp/>
                 <Favourites/>
                 <MovieList movies={this.props.movies}/>
+<<<<<<< HEAD
                    
+=======
+>>>>>>> 5696b9cb9563ba768c77615dfada1eca0447860f
             </div>
         );
     }
