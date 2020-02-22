@@ -1,0 +1,8 @@
+div.movieList {
+    position:absolute;
+    top: 10%;
+    height:87.5%;
+    right: 2%;
+    overflow-y: auto;
+    box-shadow: 5px 0px 25px black;
+}

@@ -34,6 +34,7 @@ class App extends React.Component{
       const response = await fetch(url);
       const jsonData = await response.json();
       this.setState({movies: jsonData});
+      console.log(this.state.movies);
     }
     catch(error){
       console.error(error)

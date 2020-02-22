@@ -1,5 +1,6 @@
 import React from "react";
 import SingleMovieList from "./SingleMovieList";
+import './css/MovieList.css'
 
 class MovieList extends React.Component {
     constructor(props){
@@ -8,27 +9,29 @@ class MovieList extends React.Component {
 
     render(){
         return(
-            <table className='movieList'>
-                <caption>List of Movies</caption>
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Title</th>
-                        <th>Year</th>
-                        <th>Rating</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {this.props.movies.map((m, index) =>
-                    <SingleMovieList poster={this.props.movies[index].poster} 
-                        title={this.props.movies[index].title}
-                        year={this.props.movies[index].release_date}
-                        rating={this.props.movies[index].rating}
-                        key={index}
-                    />
-                )}
-                </tbody>
-            </table>
+            <div className='movieList'>
+                <table>
+                    <caption>List of Movies</caption>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Title</th>
+                            <th>Year</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {this.props.movies.map((movie, index) =>
+                        <SingleMovieList poster={movie.poster} 
+                            title={movie.title}
+                            year={movie.release_date}
+                            rating={movie.ratings.average}
+                            key={index}
+                        />
+                    )}
+                    </tbody>
+                </table>
+            </div>
 
         );
     }
