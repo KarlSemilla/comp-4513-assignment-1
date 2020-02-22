@@ -1,0 +1,11 @@
+.searchBox {
+    background-color: slategray;
+    text-align: center;
+    position: absolute;
+    margin: auto;
+    top: 25%;
+    left: 30%;
+    width: 35%;
+    height: 25%;
+    box-shadow: 10px 10px 20px black;
+}
