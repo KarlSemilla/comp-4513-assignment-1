@@ -9,11 +9,13 @@ import {Route} from 'react-router-dom';
 class App extends React.Component{
   constructor(props){
     super(props);
-    this.state = {movies: []};
+    this.state = {movies: [],
+      ready: false};
 
   }
 
   render(){
+    if (this.state.ready) {
     return (
       <main>
         <Route path='/' exact component={Home}/>
@@ -26,6 +28,12 @@ class App extends React.Component{
         <Route path='/about' exact component={About}/>
       </main>
     );
+        } 
+        else {
+          return(
+            <div>Loading....</div>
+          );
+        }
   }
 
   async componentDidMount() {
@@ -33,8 +41,8 @@ class App extends React.Component{
       const url = "http://www.randyconnolly.com/funwebdev/3rd/api/movie/movies-brief.php?id=ALL";
       const response = await fetch(url);
       const jsonData = await response.json();
-      this.setState({movies: jsonData});
-      console.log(this.state.movies);
+      this.setState({movies: jsonData, ready:true});
+      
     }
     catch(error){
       console.error(error)

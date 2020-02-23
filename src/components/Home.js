@@ -9,7 +9,7 @@ class Home extends React.Component {
                 <div className = 'searchBox'>
                     <h1>Movie Browser</h1>
                     <h3>Title: 
-                        <input type='text' name="titleIn"></input>
+                        <input type='text' name="title"></input>
                     </h3>
                     <Link to='/default'>
                         <button>Show Matching Movies</button>
