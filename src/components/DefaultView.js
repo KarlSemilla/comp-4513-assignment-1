@@ -28,7 +28,7 @@ class DefaultView extends React.Component {
         this.setState({
             filteredMovies: movies
         });
-        console.log(this.state.filteredMovies);
+        //console.log(this.state.filteredMovies);
     }
 }
 

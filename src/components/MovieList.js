@@ -22,6 +22,7 @@ class MovieList extends React.Component {
                     </thead>
                     <tbody>
                         {this.props.movies
+                        .sort(this.compare)
                         .map((movie, index) =>
                             <SingleMovieList poster={movie.poster} 
                                 title={movie.title}
@@ -36,6 +37,16 @@ class MovieList extends React.Component {
 
         );
     }
+    
+    compare = ( a, b ) => {
+        if ( a.title < b.title ){
+          return -1;
+        }
+        if ( a.title > b.title ){
+          return 1;
+        }
+        return 0;
+      }
 
     // async componentDidMount() {
     //     //<Insert loading gif here>
