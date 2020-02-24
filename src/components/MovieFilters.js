@@ -57,46 +57,43 @@ class MovieFilters extends React.Component{
         );
     }
 
-    handleChange = (e) => {
+    handleRadio = async (e) => {
+        let target = e.currentTarget;
+        if(target.id === "before" || target.id === "after" || target.id === "between"){
+            await this.setState({selectedYear:target.id});
+        }
+        else if(target.id === "below" || target.id === "above" || target.id === "betweenSl"){
+            await this.setState({selectedRating:target.id});
+        }
+    }
+
+    handleChange = async (e) => {
         let target = e.currentTarget;
         if(target.id === "title"){
-            this.setState({title:target.value});
-            if(this.state.title!=="") {
+            await this.setState({title:target.value});
+            if(this.state.title !== "") {
                 this.applyFilters();
                 this.props.callback(this.state.filteredMovies);
             } else {
-                this.props.callback(this.props.movies);
+                this.setState({filteredMovies: this.props.movies});
             }
+            console.log(this.state.title);
         } 
         else if(target.id === this.state.selectedYear)
         {
             const updateYear = {...this.state.year};
             updateYear[target.name] = target.value;
-            this.setState({year:updateYear});
+            await this.setState({year:updateYear});
         }
         else if(target.id === this.state.selectedRating){
             const updateRating = {...this.state.rating};
             updateRating[target.name] = target.value;
-            this.setState({rating:updateRating});
-        }
-    }
-
-    handleRadio = (e) => {
-        let target = e.currentTarget;
-        if(target.id === "before" || target.id === "after" || target.id === "between"){
-            this.setState({selectedYear:target.id});
-        }
-        else if(target.id === "below" || target.id === "above" || target.id === "betweenSl"){
-            this.setState({selectedRating:target.id});
+            await this.setState({rating:updateRating});
         }
     }
     
-    handleSubmit = (e) =>{
+    handleSubmit = (e) => {
         e.preventDefault();
-        if(this.state.title !== "") {
-        this.applyFilters();
-        this.props.callback(this.state.filteredMovies);
-        }
     }
 
     applyFilters = () =>{
@@ -106,7 +103,7 @@ class MovieFilters extends React.Component{
 
     filterTable = (m) => {
         let pattern = this.state.title;
-        return !(m.title.includes(pattern));
+        return m.title.includes(pattern);
     }
 }
 
