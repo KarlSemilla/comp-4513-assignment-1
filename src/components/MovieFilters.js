@@ -18,14 +18,15 @@ class MovieFilters extends React.Component{
                 betweenHighSl:'',
             },
             selectedYear: '',
-            selectedRating:''
+            selectedRating:'',
+            filteredMovies: []
         }
     }
 
     render(){
         return(
             <div className="movieFilters">
-                <form className="filterContainer">
+                <form className="filterContainer" onSubmit={this.handleSubmit}>
                     <fieldset>
                         <h1>Movie Filters</h1>
                         <label>Title</label><input type="text" id="title" value={this.state.title} onChange={this.handleChange}></input><br/>
@@ -48,6 +49,7 @@ class MovieFilters extends React.Component{
                         <label> and </label>
                         <input type="range" min="0" max="100" id="betweenSl" name="betweenHighSl" value={this.state.rating.betweenHighSl} onChange={this.handleChange}/>
                         <br/>
+                        {/* <input type="submit" value="submit" onClick={this.handleSubmit}/> */}
                         <input type="submit" value="clear"/>
                     </fieldset>
                 </form>
@@ -59,22 +61,24 @@ class MovieFilters extends React.Component{
         let target = e.currentTarget;
         if(target.id === "title"){
             this.setState({title:target.value});
-            console.log(this.state.title);
+            if(this.state.title!=="") {
+                this.applyFilters();
+                this.props.callback(this.state.filteredMovies);
+            } else {
+                this.props.callback(this.props.movies);
+            }
         } 
         else if(target.id === this.state.selectedYear)
         {
             const updateYear = {...this.state.year};
             updateYear[target.name] = target.value;
             this.setState({year:updateYear});
-            console.log(this.state.year);
         }
         else if(target.id === this.state.selectedRating){
             const updateRating = {...this.state.rating};
             updateRating[target.name] = target.value;
             this.setState({rating:updateRating});
-            console.log(this.state.rating);
         }
-
     }
 
     handleRadio = (e) => {
@@ -85,7 +89,24 @@ class MovieFilters extends React.Component{
         else if(target.id === "below" || target.id === "above" || target.id === "betweenSl"){
             this.setState({selectedRating:target.id});
         }
+    }
+    
+    handleSubmit = (e) =>{
+        e.preventDefault();
+        if(this.state.title !== "") {
+        this.applyFilters();
+        this.props.callback(this.state.filteredMovies);
+        }
+    }
 
+    applyFilters = () =>{
+        let tempArray = this.props.movies.filter(this.filterTable);
+        this.setState({filteredMovies: tempArray});
+    }
+
+    filterTable = (m) => {
+        let pattern = this.state.title;
+        return !(m.title.includes(pattern));
     }
 }
 

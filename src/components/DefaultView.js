@@ -8,6 +8,9 @@ import MovieFilters from "./MovieFilters";
 class DefaultView extends React.Component {
     constructor(props){
         super(props);
+        this.state = {
+            filteredMovies: this.props.movies
+        }
     }
     
     render(){
@@ -15,11 +18,17 @@ class DefaultView extends React.Component {
             <div>
                 <HeaderApp/>
                 <Favourites/>
-                <MovieFilters/>
-                <MovieList movies={this.props.movies}/>
-                   
+                <MovieFilters  movies={this.props.movies} callback={this.getFilterInfo}/>
+                <MovieList movies={this.state.filteredMovies}/>
             </div>
         );
+    }
+    
+    getFilterInfo = (movies) => {
+        this.setState({
+            filteredMovies: movies
+        });
+        console.log(this.state.filteredMovies);
     }
 }
 

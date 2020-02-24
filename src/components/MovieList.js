@@ -21,14 +21,15 @@ class MovieList extends React.Component {
                         </tr>
                     </thead>
                     <tbody>
-                    {this.props.movies.map((movie, index) =>
-                        <SingleMovieList poster={movie.poster} 
-                            title={movie.title}
-                            year={movie.release_date}
-                            rating={movie.ratings.average}
-                            key={index}
-                        />
-                    )}
+                        {this.props.movies
+                        .map((movie, index) =>
+                            <SingleMovieList poster={movie.poster} 
+                                title={movie.title}
+                                year={movie.release_date}
+                                rating={movie.ratings.average}
+                                key={index}
+                            />
+                        )} 
                     </tbody>
                 </table>
             </div>
