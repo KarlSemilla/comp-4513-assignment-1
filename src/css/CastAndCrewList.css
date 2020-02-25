@@ -1,0 +1,48 @@
+.TabControls {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.tab {
+  border: none;
+  background-color: darkgray;
+  color: white;
+  padding: 10px;
+}
+
+.tab:hover {
+  background-color: gray;
+}
+
+.active {
+  background-color: #1a1a1a;
+}
+.ListContent {
+  display: grid;
+  grid-template-rows: (150, 1fr);
+  overflow: auto;
+  height: 530px;
+}
+
+.ListContent div {
+  display: grid;
+  grid-template-columns: 30% 30% auto;
+  text-align: center;
+  padding: 5px;
+  border-bottom-style: solid;
+  border-bottom-color: #f2f2f2;
+  background: linear-gradient(to bottom, #ffffff -2%, #e6e6e6 200%);
+}
+
+.ListContent div button {
+  border: none;
+  background-color: #43c5c3;
+  color: white;
+  width: 40%;
+  height: 30px;
+  margin: auto;
+}
+
+.ListContent div button:hover {
+  background-color: gray;
+}

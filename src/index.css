@@ -1,0 +1,57 @@
+.background {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  width: 100%;
+  background-image: url(./images/background.jpg);
+  font-family: "Trebuchet MS";
+}
+
+.loading {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  background-image: url(./images/loading.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000721;
+}
+
+main {
+  margin: auto;
+}
+
+.container {
+  margin: 10px;
+  box-shadow: 1px 1px 5px darkgray;
+  background-color: white;
+  opacity: 0.95;
+}
+
+.View {
+  width: 80%;
+  margin: auto;
+  display: grid;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 60px;
+  background-color: #1a1a1a;
+  text-align: center;
+  color: white;
+  box-shadow: 1px 1px 5px darkgray;
+}
+
+footer p {
+  padding-top: 5px;
+  font-family: "Tahoma";
+}

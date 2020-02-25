@@ -1,0 +1,30 @@
+.filterContainer fieldset {
+  border: none;
+}
+
+.filterContainer label {
+  margin: 5px;
+}
+
+.filterContainer h1 {
+  text-align: center;
+}
+
+.text-input {
+  margin: 4px;
+  border-style: solid;
+  border-color: gray;
+  border-radius: 4px;
+  padding: 3px;
+  width: 120px;
+  background-color: whitesmoke;
+}
+
+.clear-filters {
+  border: none;
+  margin: 20px;
+  padding: 5px;
+  width: 80px;
+  background-color: tomato;
+  border-radius: 2px;
+}

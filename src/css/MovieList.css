@@ -1,0 +1,43 @@
+.movieList {
+  overflow: auto;
+  height: 550px;
+}
+
+.MovieListItem {
+  display: grid;
+  grid-template-columns: 20% 20% auto auto 10% 10%;
+  padding: 4px;
+  text-align: center;
+  border-bottom-style: solid;
+  border-bottom-color: #f2f2f2;
+  background: linear-gradient(to bottom, #ffffff -2%, #e6e6e6 200%);
+}
+
+.MovieListItem button {
+  border: none;
+  height: 30px;
+  width: 90%;
+  margin: auto;
+  background-color: #43c5c3;
+  border-radius: 2px;
+}
+
+.view-button {
+  color: white;
+}
+
+.MovieListItem button:hover {
+  background-color: gray;
+}
+
+.MovieListItem p {
+  margin: auto;
+}
+
+.MovieListItem img {
+  height: 100px;
+}
+
+.heart-button {
+  color: tomato;
+}

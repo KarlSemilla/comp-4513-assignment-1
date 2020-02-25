@@ -1,0 +1,59 @@
+@font-face {
+  font-family: LogoFont;
+  src: url(./fonts/PainterPersonalUseOnly-Br0w.ttf);
+}
+
+.navbar {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  height: 50px;
+  padding-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+
+.nav-links {
+  text-align: center;
+  width: 160px;
+  padding: 10px;
+  cursor: pointer;
+  margin: auto;
+  color: white;
+  font-family: "Rockwell";
+  font-size: 1.4em;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.logo {
+  text-align: center;
+  margin: auto;
+  color: white;
+  text-decoration: none;
+  font-size: 50px;
+  font-family: LogoFont;
+  width: 380px;
+}
+
+.logo:hover {
+  animation: wiggle;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes wiggle {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

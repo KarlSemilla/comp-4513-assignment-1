@@ -1,0 +1,12 @@
+.CastV {
+  grid-template-columns: auto 40%;
+}
+
+.CastInfo {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 30% auto auto;
+  grid-gap: 20px;
+  height: 550px;
+  overflow: auto;
+}

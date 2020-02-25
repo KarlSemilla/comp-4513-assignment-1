@@ -1,0 +1,23 @@
+.closeCurrView {
+  border: none;
+  background-color: #43c5c3;
+  width: 30px;
+  height: 30px;
+  color: white;
+}
+
+.closeCurrView:hover {
+  background-color: #1a1a1a;
+  color: red;
+}
+
+.Card {
+  text-align: center;
+  margin: 20px;
+}
+
+.CastInfo::-webkit-scrollbar,
+.MovieInfo::-webkit-scrollbar,
+.ListContent::-webkit-scrollbar {
+  display: none;
+}
