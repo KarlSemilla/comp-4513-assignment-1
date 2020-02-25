@@ -10,7 +10,7 @@ class MovieView extends React.Component {
 
   async componentDidMount() {
     const url =
-      "http://www.randyconnolly.com/funwebdev/3rd/api/movie/movies.php?id=" +
+      "https://www.randyconnolly.com/funwebdev/3rd/api/movie/movies.php?id=" +
       this.props.movieId;
 
     const response = await fetch(url);
