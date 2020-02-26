@@ -16,28 +16,20 @@ class App extends React.Component {
   }
 
   async componentDidMount() {
+    if (localStorage.getItem("cachedMovies")) {
+      this.setState({
+        movies: JSON.parse(localStorage.getItem("cachedMovies")),
+        ready: true
+      });
+      return;
+    }
     const url =
       "https://www.randyconnolly.com/funwebdev/3rd/api/movie/movies-brief.php?id=ALL";
     const response = await fetch(url);
     const data = await response.json();
+    localStorage.setItem("cachedMovies", JSON.stringify(data));
     this.setState({ movies: data, ready: true });
   }
-
-  // async componentDidMount() {
-  //   const url =
-  //     "http://www.randyconnolly.com/funwebdev/3rd/api/movie/movies-brief.php?id=ALL";
-  //   const MoviesDB = await this.retrieveData("MoviesDB", url);
-  //   this.setState({ movies: MoviesDB, ready: true });
-  // }
-
-  // retrieveData = async (dbname, dblink) => {
-  //   if (localStorage.getItem(dbname) === null) {
-  //     const response = await fetch(dblink);
-  //     const data = await response.json();
-  //     localStorage.setItem(dbname, data);
-  //   }
-  //   return localStorage.getItem(dbname);
-  // };
 
   render() {
     if (!this.state.ready) {
