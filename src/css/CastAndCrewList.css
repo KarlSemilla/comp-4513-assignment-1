@@ -21,7 +21,7 @@
   display: grid;
   grid-template-rows: (150, 1fr);
   overflow: auto;
-  height: 530px;
+  height: 480px;
 }
 
 .ListContent div {
@@ -45,4 +45,11 @@
 
 .ListContent div button:hover {
   background-color: gray;
+}
+
+.No-info {
+  padding-top: 50px;
+  text-align: center;
+  font-size: 20px;
+  color: tomato;
 }

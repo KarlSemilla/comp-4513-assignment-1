@@ -1,9 +1,15 @@
+.movieFilters {
+  display: grid;
+  grid-template-columns: auto 11%;
+  height: 500px;
+}
+
 .filterContainer fieldset {
   border: none;
 }
 
 .filterContainer label {
-  margin: 5px;
+  margin: 3px;
 }
 
 .filterContainer h1 {
@@ -22,9 +28,12 @@
 
 .clear-filters {
   border: none;
-  margin: 20px;
-  padding: 5px;
-  width: 80px;
+  height: 35px;
+  width: 35px;
+  margin: 10px;
   background-color: tomato;
+  background-image: url("../images/clear-filter.png");
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 2px;
 }

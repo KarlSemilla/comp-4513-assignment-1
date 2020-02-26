@@ -14,6 +14,7 @@ const HeaderMenu = function(props) {
       <Link to="/About" className="nav-links">
         About
       </Link>
+      <div className="tmdb-credit"></div>
     </div>
   );
 };

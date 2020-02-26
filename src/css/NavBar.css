@@ -1,5 +1,9 @@
 @font-face {
   font-family: LogoFont;
+  src: url(./fonts/Library3am-5V3Z.otf);
+}
+@font-face {
+  font-family: NavLinkFont;
   src: url(./fonts/PainterPersonalUseOnly-Br0w.ttf);
 }
 
@@ -21,7 +25,7 @@
   cursor: pointer;
   margin: auto;
   color: white;
-  font-family: "Rockwell";
+  font-family: NavLinkFont;
   font-size: 1.4em;
   text-decoration: none;
 }

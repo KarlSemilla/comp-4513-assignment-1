@@ -50,12 +50,15 @@ class CastAndCrewList extends React.Component {
 
   renderListContent() {
     if (this.state.displayCastList) {
-      return (
-        <CastList
-          cast={this.state.movie.production.cast}
-          changeToCastView={this.props.changeToCastView}
-        />
-      );
+      if (this.state.movie.production.cast) {
+        return (
+          <CastList
+            cast={this.state.movie.production.cast}
+            changeToCastView={this.props.changeToCastView}
+          />
+        );
+      }
+      return <div className="No-info">Information is missing</div>;
     }
     return <CrewList crew={this.state.movie.production.crew} />;
   }

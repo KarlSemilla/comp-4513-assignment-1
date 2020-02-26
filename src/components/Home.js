@@ -11,7 +11,7 @@ class Home extends React.Component {
     return (
       <div className="background">
         <div className="searchBox container">
-          <h1>Movie Browser</h1>
+          <h1 className="app-name">SimpleDBM</h1>
           <h3>
             Title:
             <input

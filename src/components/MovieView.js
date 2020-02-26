@@ -96,12 +96,16 @@ class MovieView extends React.Component {
   };
 
   outputArray(array, property) {
-    let result = "";
-    for (let i of array) {
-      result += i[property] + ", ";
+    if (array) {
+      let result = "";
+      for (let i of array) {
+        result += i[property] + ", ";
+      }
+      result = result.slice(0, -2);
+      return result;
+    } else {
+      return "Missing Information";
     }
-    result = result.slice(0, -2);
-    return result;
   }
 }
 

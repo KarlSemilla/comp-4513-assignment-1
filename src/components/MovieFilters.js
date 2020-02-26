@@ -175,14 +175,9 @@ class MovieFilters extends React.Component {
             />
             <br />
             {/* <input type="submit" value="submit" onClick={this.handleSubmit}/> */}
-            <input
-              className="clear-filters"
-              type="submit"
-              value="clear"
-              onClick={this.handleClear}
-            />
           </fieldset>
         </form>
+        <button className="clear-filters" onClick={this.handleClear} />
       </div>
     );
   }

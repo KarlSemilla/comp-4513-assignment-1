@@ -4,6 +4,7 @@ import CurrentView from "./components/CurrentView.js";
 import { Route } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer";
+import About from "./components/About";
 
 class App extends React.Component {
   constructor(props) {
@@ -53,6 +54,7 @@ class App extends React.Component {
             return <CurrentView movies={this.state.movies} />;
           }}
         />
+        <Route path="/about" exact component={About} />
         <Footer />
       </div>
     );

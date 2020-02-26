@@ -1,0 +1,26 @@
+.favourites {
+  display: grid;
+  grid-template-columns: repeat(30, 1fr);
+  grid-auto-flow: column;
+  padding: 4px;
+  margin: 10px;
+}
+
+.favourites img {
+  height: 80px;
+  padding: 2px;
+}
+
+.delFavourite {
+  opacity: 0;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: 45px;
+  color: white;
+  background-color: black;
+}
+
+.delFavourite:hover {
+  opacity: 1;
+}

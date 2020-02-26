@@ -1,3 +1,8 @@
+@font-face {
+  font-family: LogoFont;
+  src: url(./fonts/Library3am-5V3Z.otf);
+}
+
 .searchBox {
   position: absolute;
   text-align: center;
@@ -32,4 +37,8 @@
 
 .searchBox button:hover {
   background-color: gray;
+}
+
+.app-name {
+  font-family: LogoFont;
 }
